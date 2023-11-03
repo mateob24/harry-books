@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Harry Potter Y La Piedra Filosofal",
+    "autor": "JK Rowling",
+    "price": 60000 ,
+    "img": "https://covers.odilo.io/public/OdiloPlace_Pottermore/9781781101315_ORIGINAL.jpg",
+    "quanty": "30"
+  },
+  {
+    "id": 2,
+    "name": "Harry Potter y La Camara De Los Secretos",
+    "autor": "JK Rowling",
+    "price": 68000 ,
+    "img": "https://images.cdn2.buscalibre.com/fit-in/360x360/1a/1b/1a1b975ace9d300841c305826a644bea.jpg",
+    "quanty": "30"
+  },
+  {
+    "id": 3,
+    "name": "Harry Potter Y El Pricionero De Azkaban",
+    "autor": "JK Rowling",
+    "price": 65000 ,
+    "img": "https://images.cdn1.buscalibre.com/fit-in/360x360/1a/31/1a3145c3ba83287fabdb65514b893cf6.jpg",
+    "quanty": "1"
+  },
+  {
+    "id": 4,
+    "name": "Harry Potter Y El Cáliz De Fuego",
+    "autor": "JK Rowling",
+    "price": 60000 ,
+    "img": "https://images.cdn3.buscalibre.com/fit-in/360x360/c9/bb/c9bbcbf0e26ce75e71b15921082d3dce.jpg",
+    "quanty": "1"
+  },
+  {
+    "id": 5,
+    "name": "Harry Potter Y La Orden Del Fénix",
+    "autor": "JK Rowling",
+    "price": 71000 ,
+    "img": "https://www.presenca.pt/cdn/shop/products/image-1_dd1ad775-055d-4cc3-9af0-45e8ee947c8a_1024x1024.jpg?v=1607090351",
+    "quanty": "30"
+  },
+  {
+    "id": 6,
+    "name": "Harry Potter Y El Misterio Del Príncipe",
+    "autor": "JK Rowling",
+    "price": 77000 ,
+    "img": "https://images.cdn1.buscalibre.com/fit-in/360x360/ac/d2/acd22d20d3bd39e68e81b69ebcbe4c54.jpg",
+    "quanty": "30"
+  },
+  {
+    "id": 7,
+    "name": "Harry Potter y las Reliquias de la Muerte I",
+    "autor": "JK Rowling",
+    "price": 80000 ,
+    "img": "https://m.media-amazon.com/images/I/514rkihbkoL.jpg",
+    "quanty": "30"
+  },
+  {
+    "id": 8,
+    "name": "Harry Potter y las Reliquias de la Muerte II",
+    "autor": "JK Rowling",
+    "price": 84000 ,
+    "img": "https://images.cdn2.buscalibre.com/fit-in/360x360/1e/00/1e003ca055c2ca66e8dedb056ea2a688.jpg",
+    "quanty": "30"
+  }
+]
