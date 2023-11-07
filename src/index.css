@@ -16,6 +16,15 @@
   height: 14vh;
 }
 
+.harry-title{
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 1px black;
+}
+
+.harry-title-span{
+  color: rgb(195, 166, 0);
+}
+
 /* SECTION HEADER */
 .harry-intro{
   height: 86vh;
@@ -32,6 +41,12 @@
 }
 
 /* SECTION BOOK */
-.cart-book{
+.card-book{
   width: 45%;
+}
+
+/* IMG GLASSES HARRY */
+.harry-glasses{
+  height: 6rem;
+  color: rgb(244, 148, 148);
 }
