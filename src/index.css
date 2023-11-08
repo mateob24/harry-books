@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 *{
   padding: 0;
   margin: 0;
@@ -11,42 +12,59 @@
   background-color: whitesmoke;
 }
 
+
 /* NAVBAR */
 .harry-nav{
   height: 14vh;
 }
 
+.icons-nav{
+  line-height: 20px;
+  font-size: 40px;
+}
+
 .harry-title{
-  letter-spacing: 2px;
+  font-size: 40px;
+  letter-spacing: 1px;
   text-shadow: 2px 2px 1px black;
 }
 
 .harry-title-span{
-  color: rgb(195, 166, 0);
+  color: rgb(170, 148, 21);
 }
+
+.harry-glasses{
+  height: 6.2rem;
+}
+
+.count-nav{
+  height: 1.7rem;
+  width: 1.7rem;
+  bottom: 3.1rem;
+  left: 3.1rem;
+  color: rgb(170, 148, 21);
+}
+
 
 /* SECTION HEADER */
 .harry-intro{
   height: 86vh;
 }
 
+
 /* IMG SECTION HEADER */
 .logo{
   height: 150px;
 }
+
 
 /* IMG SECTION HEADER */
 .logo1{
   height: 450px;
 }
 
+
 /* SECTION BOOK */
 .card-book{
   width: 45%;
-}
-
-/* IMG GLASSES HARRY */
-.harry-glasses{
-  height: 6rem;
-  color: rgb(244, 148, 148);
 }
