@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { FaMinus } from 'react-icons/fa'
 import { FaPlus } from 'react-icons/fa'
+import { GrCart } from "react-icons/gr";
 
 export const Books = () => {
 
@@ -21,12 +22,12 @@ export const Books = () => {
     const styleState = (stock) => {
         if (stock >= 1) {
             return {
-                color: 'rgb(160, 148, 21)',
+                color: 'rgb(150, 128, 10)',
                 backgroundColor: 'rgb(202, 190, 150)',
             }
         }else {
             return {
-                color: 'rgb(190, 0, 0)',
+                color: 'rgb(150, 0, 0)',
                 backgroundColor: 'rgb(210, 150, 150)',
             }
         }
@@ -43,22 +44,24 @@ export const Books = () => {
                         <img src={book.img} className='h-96 object-cover rounded-l-lg' alt="book-cover"/>
                     </div>
                     <div className='w-3/4 h-full px-2 flex gap-28 flex-col justify-center bg-zinc-300'>
-                        <p className='w-24 px-1 self-end font-bold text-center rounded-lg opacity-60' style={styleState(book.stock)}>{book.stock >= 1 ? 'Disponible' : 'Agotado'}</p>
+                        <p className='w-24 px-1 self-end font-bold text-center rounded-lg drop-shadow-md opacity-60' style={styleState(book.stock)}>{book.stock >= 1 ? 'Disponible' : 'Agotado'}</p>
                         <div className=''>   
-                            <h2 className='text-xl font-bold bg-zinc-300'>{book.name}</h2>
+                            <h2 className='text-xl font-extrabold bg-zinc-300'>{book.name}</h2>
                             <p className='font-semibold bg-zinc-300'>{book.author}</p>
-                            <p className='font-bold bg-zinc-300'>${book.price}</p>
+                            <p className='font-bold text-red-800 bg-zinc-300'>${book.price}</p>
                         </div>
                         <div className="buttons flex items-center justify-center gap-16 bg-zinc-300">
-                            <div className="plus-less bg-zinc-300">
-                                <button className='h-8 w-10 drop-shadow-lg'>
-                                    <FaPlus className='p-1 h-8 w-9 rounded-l-lg bg-zinc-400'/>
+                            <div className="flex items-center bg-zinc-300">
+                                <button className='h-9 w-10 drop-shadow-md'>
+                                    <FaPlus className='p-1 h-9 w-9 rounded-l-lg bg-zinc-400'/>
                                 </button>
-                                <button className='h-8 w-10 drop-shadow-lg'>
-                                    <FaMinus className='p-1 h-8 w-9 rounded-r-lg bg-zinc-400'/>
+                                <button className='h-9 w-10 drop-shadow-md'>
+                                    <FaMinus className='p-1 h-9 w-9 rounded-r-lg bg-zinc-400'/>
                                 </button>
                             </div>
-                            <button className='h-8 w-40 font-bold rounded-lg drop-shadow-lg bg-zinc-400'>Agregar ${book.price}</button>
+                            <button className='h-9 w-52 flex items-center justify-between font-bold rounded-lg drop-shadow-md bg-zinc-400'>Agregar ${book.price}
+                                <span className='h-9 w-8 p-1 flex items-center rounded-r-lg bg-zinc-200'><GrCart className='h-9 w-6 rounded-r-lg bg-zinc-200'/></span>
+                            </button>
                         </div>
                     </div>
                 </section>
