@@ -22,7 +22,7 @@ export const Books = () => {
     const styleState = (stock) => {
         if (stock >= 1) {
             return {
-                color: 'rgb(150, 128, 10)',
+                color: 'rgb(171, 148, 20)',
                 backgroundColor: 'rgb(202, 190, 150)',
             }
         }else {
@@ -33,34 +33,37 @@ export const Books = () => {
         }
     }
 
-    const [, setCount] = useState(0)
+    const [count, setCount] = useState(0)
 
   return (
     <>
-        <section className='my-6 flex gap-10 flex-wrap items-center justify-center relative'>
+        <section className='mt-8 mb-16 flex gap-10 flex-wrap items-center justify-center'>
             {books.map((book) => (
-                <section key={book.id} className='card-book h-96 flex items-center rounded-lg bg-zinc-300 drop-shadow-xl'>
+                <section key={book.id} className='card-book rounded-r-lg bg-zinc-300 drop-shadow-xl'>
                     <div>
-                        <img src={book.img} className='h-96 object-cover rounded-l-lg' alt="book-cover"/>
+                        <img src={book.img} className='h-96 object-cover' alt="book-cover"/>
                     </div>
-                    <div className='w-3/4 h-full px-2 flex gap-28 flex-col justify-center bg-zinc-300'>
-                        <p className='w-24 px-1 self-end font-bold text-center rounded-lg drop-shadow-md opacity-60' style={styleState(book.stock)}>{book.stock >= 1 ? 'Disponible' : 'Agotado'}</p>
+                    <div className='w-3/4 h-full px-2 flex gap-24 flex-col justify-center bg-zinc-300'>
+                        <p className='state-book self-end rounded-sm drop-shadow-md opacity-60' style={styleState(book.stock)}>
+                            {book.stock >= 1 ? 'Disponible' : 'Agotado'}
+                        </p>
                         <div className=''>   
                             <h2 className='text-xl font-extrabold bg-zinc-300'>{book.name}</h2>
                             <p className='font-semibold bg-zinc-300'>{book.author}</p>
-                            <p className='font-bold text-red-800 bg-zinc-300'>${book.price}</p>
+                            <p className='font-semibold bg-zinc-300'>{book.category}</p>
+                            <p className='font-extrabold bg-zinc-300'>${book.price}</p>
                         </div>
-                        <div className="buttons flex items-center justify-center gap-16 bg-zinc-300">
+                        <div className="buttons bg-zinc-300">
                             <div className="flex items-center bg-zinc-300">
-                                <button className='h-9 w-10 drop-shadow-md'>
-                                    <FaPlus className='p-1 h-9 w-9 rounded-l-lg bg-zinc-400'/>
+                                <button className='h-8 w-10 drop-shadow-md'>
+                                    <FaPlus className='icons-count rounded-l-md bg-zinc-200'/>
                                 </button>
-                                <button className='h-9 w-10 drop-shadow-md'>
-                                    <FaMinus className='p-1 h-9 w-9 rounded-r-lg bg-zinc-400'/>
+                                <button className='h-8 w-10 drop-shadow-md'>
+                                    <FaMinus className='icons-count rounded-r-md bg-zinc-200'/>
                                 </button>
                             </div>
-                            <button className='h-9 w-52 flex items-center justify-between font-bold rounded-lg drop-shadow-md bg-zinc-400'>Agregar ${book.price}
-                                <span className='h-9 w-8 p-1 flex items-center rounded-r-lg bg-zinc-200'><GrCart className='h-9 w-6 rounded-r-lg bg-zinc-200'/></span>
+                            <button className='add-cart font-bold rounded-md drop-shadow-md bg-zinc-200'>Agregar ${book.price}
+                                <span className='cart-box rounded-full'><GrCart className='cart'/></span>
                             </button>
                         </div>
                     </div>
