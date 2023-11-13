@@ -1,29 +1,37 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import "../Books/Books.css"
+import { fetchData } from '../../DataService';
+import { NavLink } from "react-router-dom";
+import { useState, useEffect } from 'react';
 import { FaMinus } from 'react-icons/fa'
 import { FaPlus } from 'react-icons/fa'
 import { GrCart } from "react-icons/gr";
+import { BsMagic } from "react-icons/bs"
 
 export const Books = () => {
-
+    
     const [books, setBooks] = useState([])
 
-    async function getData () {
-        const response = await fetch('./projects.json')
-        const data = await response.json()
-        console.log(data);
-        setBooks(data);
+    async function getData() {
+        try {
+            const data = await fetchData('/projects.json')
+            console.log(data);
+            setBooks(data)
+        } catch (error) {
+            console.error('Error in Books:', error);
+            throw error;
+        }
     }
 
     useEffect(() => {
-        getData()
-    }, [])
+        getData();
+      }, []);
 
     const styleState = (stock) => {
         if (stock >= 1) {
             return {
-                color: 'rgb(171, 148, 20)',
+                color: 'rgb(171, 128, 20)',
                 backgroundColor: 'rgb(202, 190, 150)',
+                
             }
         }else {
             return {
@@ -31,27 +39,40 @@ export const Books = () => {
                 backgroundColor: 'rgb(210, 150, 150)',
             }
         }
+
+        
     }
 
     const [count, setCount] = useState(0)
 
   return (
     <>
-        <section className='mt-8 mb-16 flex gap-10 flex-wrap items-center justify-center'>
+        <section id='books-section'>
             {books.map((book) => (
                 <section key={book.id} className='card-book rounded-r-lg bg-zinc-300 drop-shadow-xl'>
                     <div>
                         <img src={book.img} className='h-96 object-cover' alt="book-cover"/>
                     </div>
-                    <div className='w-3/4 h-full px-2 flex gap-24 flex-col justify-center bg-zinc-300'>
-                        <p className='state-book self-end rounded-sm drop-shadow-md opacity-60' style={styleState(book.stock)}>
-                            {book.stock >= 1 ? 'Disponible' : 'Agotado'}
-                        </p>
-                        <div className=''>   
-                            <h2 className='text-xl font-extrabold bg-zinc-300'>{book.name}</h2>
-                            <p className='font-semibold bg-zinc-300'>{book.author}</p>
-                            <p className='font-semibold bg-zinc-300'>{book.category}</p>
-                            <p className='font-extrabold bg-zinc-300'>${book.price}</p>
+                    <div className='info-book bg-zinc-300'>
+                        <div className="box-state-book bg-zinc-300">
+                            <p className='state-book drop-shadow-md opacity-50' style={styleState(book.stock)}>
+                                {book.stock >= 1 ? 'Disponible' : 'Agotado'}
+                            </p>
+                        </div>
+                        <div className='dates-book bg-zinc-300'>   
+                            <h2 className='title-book bg-zinc-300'>{book.title}</h2>
+                            <div className="items-book">
+                                <p className="subtitle-item bg-zinc-300">Autor</p>
+                                <p className='item-date-book bg-zinc-300'>{book.author}</p>
+                                <p className="subtitle-item bg-zinc-300">Idioma</p>
+                                <p className='item-date-book bg-zinc-300'>{book.language}</p>
+                                <p className="subtitle-item bg-zinc-300">Categoría</p>
+                                <p className='item-date-book bg-zinc-300'>{book.category}</p>
+                            </div>
+                            <p className='price-date-book bg-zinc-300'>${book.price}</p>
+                            <button className='buy-book rounded-md drop-shadow-md bg-zinc-200'>Cómpralo
+                                <span className='span-buy-book rounded-full'><BsMagic className="magic-book"/></span>
+                            </button>
                         </div>
                         <div className="buttons bg-zinc-300">
                             <div className="flex items-center bg-zinc-300">
@@ -62,8 +83,8 @@ export const Books = () => {
                                     <FaMinus className='icons-count rounded-r-md bg-zinc-200'/>
                                 </button>
                             </div>
-                            <button className='add-cart font-bold rounded-md drop-shadow-md bg-zinc-200'>Agregar ${book.price}
-                                <span className='cart-box rounded-full'><GrCart className='cart'/></span>
+                            <button className='add-cart rounded-md drop-shadow-md bg-zinc-200'>Agregar {count}
+                                <span className='span-add-cart rounded-full'><GrCart className='cart'/></span>
                             </button>
                         </div>
                     </div>

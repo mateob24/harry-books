@@ -1,4 +1,4 @@
-import React from 'react'
+import "../SectionHeader/SectionHeader.css"
 
 export const SectionHeader = () => {
   return (
