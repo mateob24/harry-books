@@ -1,4 +1,4 @@
-/* BOOKS */
+/* MODALS */
 #books-section{
     margin-top: 2rem;
     margin-bottom: 5rem;
@@ -93,7 +93,7 @@
     letter-spacing: 0.05rem;
   }
 
-  .buy-book{
+  /* .buy-book{
     height: 2rem;
     width: 10rem;
     padding-left: 2rem;
@@ -122,9 +122,9 @@
     right: 0.4rem;
     position: absolute;
     background-color: rgba(170, 170, 170);
-  }
+  } */
   
-  /* .buttons{
+  .buttons{
     height: 20%;
     width: 100%;
     gap: 4rem;
@@ -174,4 +174,4 @@
     position: absolute;
     background-color: rgba(170, 170, 170);
   }
-   */
+  

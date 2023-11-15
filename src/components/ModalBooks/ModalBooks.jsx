@@ -1,12 +1,14 @@
-import "../Books/Books.css"
-import { fetchData } from '../../DataService';
+import "../ModalBooks/ModalBooks.css"
+import Modal from 'react-modal';
 import { useState, useEffect } from 'react';
-import { BsMagic } from "react-icons/bs"
+import { fetchData } from '../../DataService';
+import { FaMinus } from 'react-icons/fa'
+import { FaPlus } from 'react-icons/fa'
+import { GrCart } from "react-icons/gr";
 
-export const Books = () => {
-    
+export const ModalBooks = ({isOpen, onClose}) => {
+
     const [books, setBooks] = useState([])
-    const [countQuantity, setCountQuantity] = useState(0)
 
     async function getData() {
         try {
@@ -42,34 +44,34 @@ export const Books = () => {
 
   return (
     <>
-        <section id='books-section'>
+        <section id='modals-section'>
             {books.map((book) => (
-                <section key={book.id} className='card-book rounded-r-lg bg-zinc-300 drop-shadow-xl'>
+                <section key={book.id} className='card-modal rounded-r-lg bg-zinc-300 drop-shadow-xl'>
                     <div>
                         <img src={book.img} className='h-96 object-cover' alt="book-cover"/>
                     </div>
-                    <div className='info-book bg-zinc-300'>
-                        <div className="box-state-book bg-zinc-300">
+                    <div className='info-modal bg-zinc-300'>
+                        <div className="box-state-modal bg-zinc-300">
                             <p className='state-book drop-shadow-md' style={styleState(book.stock)}>
                                 {book.stock >= 1 ? 'Disponible' : 'Agotado'}
                             </p>
                         </div>
-                        <div className='dates-book bg-zinc-300'>   
-                            <h2 className='title-book bg-zinc-300'>{book.title}</h2>
-                            <div className="items-book bg-zinc-300">
-                                <p className="subtitle-item bg-zinc-300">Autor</p>
-                                <p className='item-date-book bg-zinc-300'>{book.author}</p>
-                                <p className="subtitle-item bg-zinc-300">Idioma</p>
-                                <p className='item-date-book bg-zinc-300'>{book.language}</p>
-                                <p className="subtitle-item bg-zinc-300">Categoría</p>
-                                <p className='item-date-book bg-zinc-300'>{book.category}</p>
-                                <p className='price-date-book bg-zinc-300'>${book.price}</p>
+                        <div className='dates-modal bg-zinc-300'>   
+                            <h2 className='title-modal bg-zinc-300'>{book.title}</h2>
+                            <div className="items-modal bg-zinc-300">
+                                <p className="subtitle-item-modal bg-zinc-300">Autor</p>
+                                <p className='item-date-modal bg-zinc-300'>{book.author}</p>
+                                <p className="subtitle-item-modal bg-zinc-300">Idioma</p>
+                                <p className='item-date-modal bg-zinc-300'>{book.language}</p>
+                                <p className="subtitle-item-modal bg-zinc-300">Categoría</p>
+                                <p className='item-date-modal bg-zinc-300'>{book.category}</p>
+                                <p className='price-date-modal bg-zinc-300'>${book.price}</p>
                             </div>
-                            <button className='buy-book drop-shadow-md' style={styleState(book.stock)}>Cómpralo
+                            {/* <button className='buy-modal drop-shadow-md' style={styleState(book.stock)}>Cómpralo
                                 <span className='span-buy-book rounded-full'><BsMagic className="magic-book"/></span>
-                            </button>
+                            </button> */}
                         </div>
-                        {/* <div className="buttons bg-zinc-300">
+                        <div className="buttons-modal bg-zinc-300">
                             <div className="flex items-center bg-zinc-300">
                                 <button className='h-8 w-10 drop-shadow-md'>
                                     <FaPlus className='icons-count rounded-l-md bg-zinc-200'/>
@@ -81,7 +83,7 @@ export const Books = () => {
                             <button className='add-cart rounded-md drop-shadow-md bg-zinc-200'>Agregar {count}
                                 <span className='span-add-cart rounded-full'><GrCart className='cart'/></span>
                             </button>
-                        </div> */}
+                        </div>
                     </div>
                 </section>
             ))}
