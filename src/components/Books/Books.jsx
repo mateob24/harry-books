@@ -6,7 +6,6 @@ import { BsMagic } from "react-icons/bs"
 export const Books = () => {
     
     const [books, setBooks] = useState([])
-    const [countQuantity, setCountQuantity] = useState(0)
 
     async function getData() {
         try {
@@ -21,7 +20,7 @@ export const Books = () => {
 
     useEffect(() => {
         getData();
-      }, []);
+    }, []);
 
     const styleState = (stock) => {
         if (stock >= 1) {

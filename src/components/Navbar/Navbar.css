@@ -25,6 +25,7 @@
     padding: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .icons-nav{
@@ -37,7 +38,7 @@
     width: 1.7rem;
     bottom: 3.1rem;
     left: 3.1rem;
-    font-size: 1.125rem;
+    font-size: 1.05rem;
     font-weight: 800;
     text-align: center;
     position: absolute;
