@@ -88,7 +88,7 @@
   }
 
   .price-date-book{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.05rem;
   }
@@ -123,55 +123,3 @@
     position: absolute;
     background-color: rgba(170, 170, 170);
   }
-  
-  /* .buttons{
-    height: 20%;
-    width: 100%;
-    gap: 4rem;
-    display: none;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .icons-count{
-    height: 2rem;
-    width: 2.25rem;
-    padding: 0.25rem;
-  }
-  
-  .icons-count:hover{
-    background-color: rgb(170, 170, 170);
-  }
-  
-  .add-cart{
-    height: 2rem;
-    width: 10rem;
-    padding-left: 2rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .add-cart:hover{
-    background-color: rgb(170, 170, 170);
-  }
-  
-  .span-add-cart{
-    height: 2.8rem;
-    width: 2.8rem;
-    right: -0.8rem;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    background-color: rgb(170, 170, 170);
-  }
-  
-  .cart{
-    height: 1.8rem;
-    width: 1.8rem;
-    right: 0.5rem;
-    position: absolute;
-    background-color: rgba(170, 170, 170);
-  }
-   */

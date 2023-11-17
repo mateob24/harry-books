@@ -1,0 +1,199 @@
+/* MODALS */
+  .card-modal{
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .info-modal{
+    width: 75%;
+    height: 100%;
+    padding: 0 0.6rem;
+    display: flex;  
+    gap: 2rem;  
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .img-modal{
+    height: 41rem;
+  }
+
+  .box-state-modal{
+    height: 10%;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+  }
+  
+  .state-modal{
+    width: 5.6rem;
+    height: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06rem;
+    border-radius: 0.125rem;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dates-modal{
+    height: 88%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-modal{
+    height: 2.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+  }
+
+  .items-modal{
+    width: 24rem;
+    height: 10rem;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .subtitle-item-modal{
+    height: 0.6rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    z-index: 1;
+    color: rgb(170, 170, 170);
+    text-align: center;
+  }
+
+  .item-date-synopsis{
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    text-align: center;
+  }
+
+  .item-date-modal{
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+  }
+
+  .item-num-modal{
+    padding-bottom: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+  } 
+
+  .price-date-modal{
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+  }
+  
+  .buttons-modal{
+    height: 30%;
+    width: 100%;
+    gap: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icons-count{
+    height: 2.6rem;
+    width: 2.8rem;
+    padding: 0.4rem;
+  }
+
+  .icons-count-p{
+    font-size: 2rem;
+    height: 2.6rem;
+    width: 2.8rem;
+    padding: 0rem;
+    text-align: center;
+  }
+  
+  .icons-count:hover{
+    background-color: rgb(170, 170, 170);
+  }
+  
+  .add-cart{
+    height: 2.6rem;
+    width: 12rem;
+    padding-left: 3rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .add-cart:hover{
+    background-color: rgb(170, 170, 170);
+  }
+  
+  .span-add-cart{
+    height: 3.4rem;
+    width: 3.4rem;
+    right: -1.2rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(170, 170, 170);
+  }
+  
+  .cart{
+    height: 2.1rem;
+    width: 2.1rem;
+    right: 0.6rem;
+    position: absolute;
+    background-color: rgba(170, 170, 170);
+  }
+
+
+
+  /* ------------------------------------------------------------------ */
+
+  .modal{
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal.is-open{
+    display: flex;
+  }
+
+  .modal-container{
+    position: relative;
+    padding: 1.6rem;
+    height: 90vh;
+    width: 90%;
+    overflow-y: auto;
+  }
+
+  .modal-close{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    font-size: 1.2rem;
+  }
+  

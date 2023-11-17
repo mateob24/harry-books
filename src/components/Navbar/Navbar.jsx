@@ -28,7 +28,7 @@ export const Navbar = () => {
               </NavLink>              
               <button onClick={handleOpen} className='icon-box rounded-full relative bg-zinc-200 drop-shadow-md'>
                 <BsCart3 className='icons-nav bg-zinc-200'/>
-                <p className='count-nav rounded-full bg-red-800'>2</p>
+                <p className='count-nav rounded-full bg-red-800'>X</p>
               </button>
             </div>
         </nav>
