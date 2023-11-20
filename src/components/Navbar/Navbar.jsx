@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { LiaBookSolid } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
-import { BsCart3 } from "react-icons/bs";
-import { GiBlackBook } from "react-icons/gi";
+import { GiSpellBook } from "react-icons/gi";
+// import { GiWhiteBook } from "react-icons/gi";
+import { IoCart } from "react-icons/io5";
 import "../Navbar/Navbar.css";
 
 export const Navbar = () => {
@@ -32,14 +32,14 @@ export const Navbar = () => {
             onClick={() => (window.location.hash = "#books-section")}
             className="icon-box rounded-full bg-zinc-200 drop-shadow-md"
           >
-            <GiBlackBook className="icons-nav bg-zinc-200" />
+            <GiSpellBook className="icons-nav bg-zinc-200" />
           </NavLink>
           <button
             onClick={handleOpen}
             className="icon-box rounded-full relative bg-zinc-200 drop-shadow-md"
           >
-            <BsCart3 className="icons-nav bg-zinc-200" />
-            <p className="flex items-center justify-center count-nav rounded-full bg-red-800">
+            <IoCart className="icons-nav bg-zinc-200" />
+            <p className="point-icon-nav rounded-full bg-red-800">
               <img className="bg-red-800" src="./flash.png" alt="thunder" />
             </p>
           </button>

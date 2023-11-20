@@ -1,12 +1,31 @@
 /* SECTION HEADER */
 .harry-intro{
     height: 86vh;
+    width: 100%;
+    display: flex;
+    gap: 1.7rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   } 
+
+  .logo-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   
   .logo{
-    height: 150px;
+    height: 8rem;
   }
   
   .logo1{
-    height: 450px;
+    height: 27rem;
+  }
+
+  .slogan{
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-align: center;
   }

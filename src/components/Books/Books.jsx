@@ -5,7 +5,8 @@ import { fetchData } from "../../DataService";
 import { BsMagic } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
-import { BsCart3 } from "react-icons/bs";
+import { IoCart } from "react-icons/io5";
+import { ImBin } from "react-icons/im";
 import { useModal } from "../Hooks/useModal.js";
 
 export const Books = () => {
@@ -32,18 +33,20 @@ export const Books = () => {
     }
   };
 
+  //PARA HACER USO DE LAS PROPIEDADES DE LA API EN LA VENTANA MODAL
   const selectedBook = books.find((book) => book.id === modalBookId);
 
-  const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
   };
 
   const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
+    setCount(count - 1);
   };
+
+  const clean = () => {
+    setCount(0)
+  }
 
   const handleAddToCart = () => {
     // Supongamos que la API tiene un endpoint para actualizar el stock.
@@ -187,15 +190,19 @@ export const Books = () => {
                     </p>
                   </div>
                 </div>
-                <div>
-                  <p className="subtitle-item-modal bg-zinc-300">Precio</p>
-                  <p className="price-date-modal bg-zinc-300">
-                    ${selectedBook.price}
-                  </p>
-                  <p className="subtitle-item-modal bg-zinc-300">Subtotal</p>
-                  <p className="price-date-modal bg-zinc-300">
-                    ${selectedBook.price}
-                  </p>
+                <div className="price-box-modal bg-zinc-300">
+                  <div>
+                    <p className="subtitle-item-modal bg-zinc-300">Precio</p>
+                    <p className="price-date-modal bg-zinc-300">
+                      ${selectedBook.price}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="subtitle-item-modal bg-zinc-300">Subtotal</p>
+                    <p className="price-date-modal bg-zinc-300">
+                      ${selectedBook.price}
+                    </p>
+                  </div>
                 </div>
                 <div className="buttons-modal bg-zinc-300">
                   <div className="flex items-center bg-zinc-300">
@@ -204,6 +211,12 @@ export const Books = () => {
                       className="h-10 w-12 drop-shadow-md"
                     >
                       <FaMinus className="icons-count rounded-l-md bg-zinc-200" />
+                    </button>
+                    <button
+                      onClick={clean}
+                      className="h-10 w-12 drop-shadow-md"
+                    >
+                      <ImBin className="icons-count bg-zinc-200" />
                     </button>
                     <button
                       onClick={increment}
@@ -218,7 +231,7 @@ export const Books = () => {
                   >
                     Agregar {count}
                     <span className="span-add-cart rounded-full">
-                      <BsCart3 className="cart" />
+                      <IoCart className="cart" />
                     </span>
                   </button>
                 </div>

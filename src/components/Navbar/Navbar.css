@@ -7,18 +7,18 @@
     font-size: 2.4rem;
     font-weight: 800;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
   }
   
   .harry-title-span{
-    color: rgb(171, 148, 20);
+    color: rgb(171, 128, 20);
   }
   
   .harry-glasses{
-    height: 5.0rem;
-    width: 5.0rem;
+    height: 5rem;
+    width: 5rem;
   }
   
   .icon-box{
@@ -30,18 +30,21 @@
   
   .icons-nav{
     line-height: 20px;
-    font-size: 40px;
+    font-size: 2.8rem;
   }
   
-  .count-nav{
+  .point-icon-nav{
     height: 1.7rem;
     width: 1.7rem;
-    bottom: 3.1rem;
-    left: 3.1rem;
+    bottom: 3.2rem;
+    left: 3.2rem;
     font-size: 1rem;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     position: absolute;
-    color: rgb(171, 148, 20);
+    color: rgb(171, 128, 20);
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8);
   }
