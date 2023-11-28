@@ -79,6 +79,7 @@
   letter-spacing: 0.06rem;
   z-index: 1;
   color: rgb(170, 170, 170);
+  /* text-shadow: 1px 1px 1px rgba(170, 170, 170, 0.6); */
 }
 
 .item-date-book {

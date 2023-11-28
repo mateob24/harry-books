@@ -29,9 +29,9 @@
 }
 
 .state-modal {
-  width: 5.6rem;
-  height: 1.5rem;
-  font-size: 0.85rem;
+  width: 5.8rem;
+  height: 1.6rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.06rem;
   border-radius: 0.125rem;
@@ -74,6 +74,7 @@
   z-index: 1;
   color: rgb(170, 170, 170);
   text-align: center;
+  /* text-shadow: 1px 1px 1px rgba(170, 170, 170, 0.6); */
 }
 
 .item-date-synopsis {
@@ -96,18 +97,19 @@
 }
 
 .price-box-modal{
-  width: 20rem;
+  width: 30rem;
   height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15rem;
+  gap: 10rem;
 }
 
 .price-date-modal {
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.05rem;
+  text-align: center;
 }
 
 .buttons-modal {

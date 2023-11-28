@@ -16,7 +16,7 @@ export const Navbar = () => {
     <>
       <nav className="harry-nav w-full flex justify-between items-center bg-zinc-300 drop-shadow-xl">
         <div className="w-80 ml-14 flex items-center bg-zinc-300">
-          <p className="harry-title text-red-800 bg-zinc-300">
+          <p className="harry-title bg-zinc-300">
             Harry<span className="harry-title-span bg-zinc-300">Books</span>
           </p>
         </div>
@@ -39,8 +39,8 @@ export const Navbar = () => {
             className="icon-box rounded-full relative bg-zinc-200 drop-shadow-md"
           >
             <IoCart className="icons-nav bg-zinc-200" />
-            <p className="point-icon-nav rounded-full bg-red-800">
-              <img className="bg-red-800" src="./flash.png" alt="thunder" />
+            <p className="point-icon-nav rounded-full">
+              <img className="thunder" src="./flash.png" alt="thunder" />
             </p>
           </button>
         </div>

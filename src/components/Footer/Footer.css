@@ -8,7 +8,8 @@
     font-size: 1.75rem;
     font-weight: 800;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8);
+    color: rgb(150, 0, 0);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
   }

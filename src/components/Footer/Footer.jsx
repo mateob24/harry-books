@@ -11,7 +11,7 @@ export const Footer = () => {
             </div>
             <NavLink to='/' className="rounded-full bg-zinc-300">
                 {/* <img src="./gafas-harry-potter.png" className="harry-glasses-f rounded-full bg-zinc-200" alt="harry-glasses"/> */}
-              <p className='harry-title-f text-red-800 bg-zinc-300'>Harry<span className="harry-title-span bg-zinc-300">Books</span></p>
+              <p className='harry-title-f bg-zinc-300'>Harry<span className="harry-title-span bg-zinc-300">Books</span></p>
             </NavLink>
             <div className="w-80 mr-14 flex items-center justify-end bg-zinc-300">
                 <NavLink to='mailto:bernalmateoa@gmail.com?Subject=Interesad@s%20en%20el%20desarrollador' className="flex p-4 rounded-full bg-zinc-200 drop-shadow-md">

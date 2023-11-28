@@ -19,16 +19,16 @@ export const Books = () => {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  const styleState = (stock) => {
+  const styleState = (stock) => { 
     if (stock >= 1) {
       return {
-        color: "rgb(171, 128, 20)",
-        backgroundColor: "rgb(202, 190, 150)",
+        color: "rgb(171, 148, 40)",
+        backgroundColor: "rgb(171, 148, 40, 0.3)",
       };
     } else {
       return {
         color: "rgb(150, 0, 0)",
-        backgroundColor: "rgb(210, 150, 150)",
+        backgroundColor: "rgb(150, 0, 0, 0.3)",
       };
     }
   };
@@ -36,19 +36,26 @@ export const Books = () => {
   //PARA HACER USO DE LAS PROPIEDADES DE LA API EN LA VENTANA MODAL
   const selectedBook = books.find((book) => book.id === modalBookId);
 
+  const [count, setCount] = useState(0)
+  const [subtotal, setSubtotal] = useState(0)
   const increment = () => {
     setCount(count + 1);
+    setSubtotal(subtotal + selectedBook.price)
   };
 
   const decrement = () => {
-    setCount(count - 1);
+    if (count > 0 && subtotal > 0) {
+      setCount(count - 1);
+      setSubtotal(subtotal - selectedBook.price)
+    }
   };
 
   const clean = () => {
     setCount(0)
+    setSubtotal(0)
   }
 
-  const handleAddToCart = () => {
+  const modalAddToCart = () => {
     // Supongamos que la API tiene un endpoint para actualizar el stock.
     const updatedStock =
       books.find((book) => book.id === modalBookId)?.stock - count;
@@ -61,6 +68,8 @@ export const Books = () => {
 
     // Cerrar la modal
     closeModal();
+
+    setCount(0)
   };
 
   const updateStockOnServer = (bookId, newStock) => {
@@ -191,16 +200,16 @@ export const Books = () => {
                   </div>
                 </div>
                 <div className="price-box-modal bg-zinc-300">
-                  <div>
+                  <div className="w-1/3">
                     <p className="subtitle-item-modal bg-zinc-300">Precio</p>
                     <p className="price-date-modal bg-zinc-300">
                       ${selectedBook.price}
                     </p>
                   </div>
-                  <div>
+                  <div className="w-1/3">
                     <p className="subtitle-item-modal bg-zinc-300">Subtotal</p>
                     <p className="price-date-modal bg-zinc-300">
-                      ${selectedBook.price}
+                      ${subtotal}
                     </p>
                   </div>
                 </div>
@@ -226,7 +235,7 @@ export const Books = () => {
                     </button>
                   </div>
                   <button
-                    onClick={handleAddToCart}
+                    onClick={modalAddToCart}
                     className="add-cart rounded-md drop-shadow-md bg-zinc-200"
                   >
                     Agregar {count}
