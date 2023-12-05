@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiSpellBook } from "react-icons/gi";
 // import { GiWhiteBook } from "react-icons/gi";
@@ -6,11 +5,6 @@ import { IoCart } from "react-icons/io5";
 import "../Navbar/Navbar.css";
 
 export const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   return (
     <>
@@ -34,15 +28,15 @@ export const Navbar = () => {
           >
             <GiSpellBook className="icons-nav bg-zinc-200" />
           </NavLink>
-          <button
-            onClick={handleOpen}
+          <NavLink
+            to={"/cart"}
             className="icon-box rounded-full relative bg-zinc-200 drop-shadow-md"
           >
             <IoCart className="icons-nav bg-zinc-200" />
             <p className="point-icon-nav rounded-full">
               <img className="thunder" src="./flash.png" alt="thunder" />
             </p>
-          </button>
+          </NavLink>
         </div>
       </nav>
     </>

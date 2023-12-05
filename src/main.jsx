@@ -15,4 +15,8 @@ import App from './App.jsx'
 import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<BrowserRouter><App /></BrowserRouter>)
+root.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+)

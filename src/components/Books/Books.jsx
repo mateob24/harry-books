@@ -10,8 +10,8 @@ import { ImBin } from "react-icons/im";
 import { useModal } from "../Hooks/useModal.js";
 
 export const Books = () => {
-  const [books, setBooks] = useState([]);
   const [isOpenModal, modalBookId, openModal, closeModal] = useModal(false);
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
     fetchData()
@@ -39,8 +39,10 @@ export const Books = () => {
   const [count, setCount] = useState(0)
   const [subtotal, setSubtotal] = useState(0)
   const increment = () => {
-    setCount(count + 1);
-    setSubtotal(subtotal + selectedBook.price)
+    if (count >= 0 && count < selectedBook.stock) {
+      setCount(count + 1);
+      setSubtotal(subtotal + selectedBook.price) 
+    }
   };
 
   const decrement = () => {
@@ -55,9 +57,11 @@ export const Books = () => {
     setSubtotal(0)
   }
 
-  const modalAddToCart = () => {
+  const modalAddToCart = (book) => {
+    console.log(book);
     // Supongamos que la API tiene un endpoint para actualizar el stock.
     const updatedStock =
+      //encadenamiento opcional (?.)
       books.find((book) => book.id === modalBookId)?.stock - count;
 
     // Llama a addToCart del contexto del carrito
@@ -65,6 +69,8 @@ export const Books = () => {
 
     // Simular una solicitud a la API para actualizar el stock
     updateStockOnServer(modalBookId, updatedStock);
+
+    // addToCart(selectedBook, count)
 
     // Cerrar la modal
     closeModal();
@@ -78,6 +84,8 @@ export const Books = () => {
     // Esto es solo un ejemplo y debe adaptarse a la lógica de tu API real
     setBooks((prevBooks) =>
       prevBooks.map((book) =>
+        //en caso de que los 'id' sean iguales se creará un objeto con el mismo contenido 
+        //del libro pero un nuevo 'stock' actualizado, sino devuelve el libro sin modificaciones
         book.id === bookId ? { ...book, stock: newStock } : book
       )
     );
@@ -85,6 +93,8 @@ export const Books = () => {
 
   return (
     <>
+    {/* <CarritoProvider> */}
+
       <section id="books-section">
         {books.map((book) => (
           <section
@@ -235,10 +245,10 @@ export const Books = () => {
                     </button>
                   </div>
                   <button
-                    onClick={modalAddToCart}
+                    onClick={() => modalAddToCart(selectedBook)}
                     className="add-cart rounded-md drop-shadow-md bg-zinc-200"
                   >
-                    Agregar {count}
+                    Comprar {count}
                     <span className="span-add-cart rounded-full">
                       <IoCart className="cart" />
                     </span>
@@ -249,6 +259,7 @@ export const Books = () => {
           </section>
         )}
       </ModalBook>
+      {/* </CarritoProvider> */}
     </>
   );
 };
