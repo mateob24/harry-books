@@ -1,7 +1,8 @@
 import "../Books/Books.css";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { ModalBook } from "../ModalBook/ModalBook";
-import { fetchData } from "../../DataService";
+// import { fetchData } from "../../DataService";
+import { dataContext } from "../Context/DataContext.jsx";
 import { BsMagic } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
@@ -11,13 +12,15 @@ import { useModal } from "../Hooks/useModal.js";
 
 export const Books = () => {
   const [isOpenModal, modalBookId, openModal, closeModal] = useModal(false);
-  const [books, setBooks] = useState([]);
+  // const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    fetchData()
-      .then((data) => setBooks(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  // useEffect(() => {
+  //   fetchData()
+  //     .then((data) => setBooks(data))
+  //     .catch((error) => console.error("Error fetching data:", error));
+  // }, []);
+
+  const { books } = useContext(dataContext)
 
   const styleState = (stock) => { 
     if (stock >= 1) {
